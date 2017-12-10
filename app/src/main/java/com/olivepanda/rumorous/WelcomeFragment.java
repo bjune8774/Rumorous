@@ -1,5 +1,6 @@
 package com.olivepanda.rumorous;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -17,6 +18,10 @@ import com.olivepanda.rumorous.util.RLog;
 public class WelcomeFragment extends Fragment {
     private final String TAG = this.getClass().getSimpleName();
     private int mIndex;
+
+    public WelcomeFragment() {
+        super();
+    }
 
     public WelcomeFragment(int idx) {
         RLog.d(TAG, "WelcomeFragment : index = " + idx);
@@ -36,5 +41,17 @@ public class WelcomeFragment extends Fragment {
         }
 
         return rootView;
+    }
+
+    @Override
+    public void onAttach(Context context) {
+        RLog.d(TAG, "onAttach");
+        super.onAttach(context);
+    }
+
+    @Override
+    public void onResume() {
+        RLog.d(TAG, "onResume");
+        super.onResume();
     }
 }
